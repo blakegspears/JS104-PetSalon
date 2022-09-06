@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
     <link rel="stylesheet" href="styles/style.css">
     <title>The Wet Pet Salon</title>
 </head>
@@ -15,10 +14,10 @@
         
 
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="register.html">Register</a>
+            <a class="link" href="index.html">Home</a>
+            <a class="link" href="about.html">About</a>
+            <a class="link" href="services.html">Services</a>
+            <a class="link" href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -46,33 +45,36 @@
                     <label class="form-label">Owner's Name: </label>
                     <input class="form-control" type="text" id="ownerName" placeholder="Enter owner's name">
                 </div>
+                <div class="form-element">
+                    <label class="form-label">Owner's Phone: </label>
+                    <input class="form-control" type="text" id="contactPhone" placeholder="Enter owner's phone number">
+                </div>
                 <div>
                     <label class="form-label">Service: </label>
                     <select id="petService">
                         <option value="" selected disabled>-- Select an option --</option>
                         <option value="Grooming">Grooming</option>
-                        <option value="'Pet'icure">Nails</option>
+                        <option value="Nails">"Pet"icure</option>
                         <option value="Vaccines">Vaccines</option>
                     </select>
                 </div>
                 <button onclick="register();">Register</button>
             </div>
-        </div>
+        <div id="pet">
 
-
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati voluptate atque odio sequi tenetur asperiores amet facere maxime id, rem itaque ducimus consectetur eos corporis similique incidunt, unde at nam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa asperiores quo ab excepturi aperiam ut in molestias optio, vero earum nesciunt dicta doloremque reiciendis natus totam, ad, corporis nemo! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, veritatis distinctio! Labore dolorem illum ab quae natus nobis obcaecati sed, ratione consequuntur ipsum, eos veritatis, quisquam ducimus libero perferendis. Laudantium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, maiores. A ea dignissimos maiores adipisci accusantium nemo rerum nobis inventore cumque corporis, consectetur molestias quod incidunt voluptatem quibusdam soluta. Officiis?</p>
         </div>
     </main>
 
-    <footer>
-        <div id="Info">
+
+    <footer id="Info">
     
         
-        </div>
+    
     
         
 
     </footer>
+    <script src="scripts/display.js"></script>
     <script src="scripts/register.js"></script>
 </body>
 

@@ -1,5 +1,5 @@
 
-console.log("Registering");
+console.log("Register");
 
 let petSalon ={
     name: "The Wet Pet Salon",
@@ -78,30 +78,46 @@ function Pet(name, age, gender, breed, service, ownerName, contactPhone){
 function displaypetSalon(){
 
 
-    /*
-    document.getElementById("Info").innerHTML=`
+
+document.getElementById("Info").innerHTML=`
 <p>Name: ${petSalon.name}</p>
 <p>Phone: ${petSalon.phone}</p>
 <p>Street: ${petSalon.address.street}</p>
 <p>City: ${petSalon.address.city}</p>
 <p>State: ${petSalon.address.state}</p>
 <p>Zip: ${petSalon.address.zip}</p>`;
-*/
+
 }
 let nameInput = document.getElementById("petName");
 let ageInput = document.getElementById("petAge");
 let genderInput = document.getElementById("petGender");
 let breedInput = document.getElementById("petBreed");
 let serviceSelect = document.getElementById("petService");
-let ownerName = document.getElementById("petOwner");
+let ownerName = document.getElementById("ownerName");
+let contactPhone = document.getElementById("contactPhone");
+
+function isValid(aPet){
+    let valid= true;
+
+    if(aPet.name == ""){
+        valid= false;
+    }
+    
+    return valid;
+}
 
 function register(){
-    console.log(nameInput.value,ageInput.value,genderInput.value,breedInput.value, ownerName.value);
-    let thePet = new Pet(nameInput.value, ageInput.value, genderInput.value, breedInput.value, serviceSelect.value, ownerName.value);
-    petSalon.pet.push(thePet);
-    console.log(petSalon.pet)
-    clearInputs();
+    console.log(nameInput.value,ageInput.value,genderInput.value,breedInput.value, ownerName.value, contactPhone.value, serviceSelect.value);
+    let thePet = new Pet(nameInput.value, ageInput.value, genderInput.value, breedInput.value, serviceSelect.value, ownerName.value, contactPhone.value);
+    if(isValid(thePet)){
+        petSalon.pet.push(thePet);
+        clearInputs();
+        displayPetCards();    
+    }else{
+        alert("Please add the required information.");
+    }
 }
+    
 
 function clearInputs(){
     nameInput.value = "";
@@ -110,15 +126,18 @@ function clearInputs(){
     breedInput.value = "";
     serviceSelect.value = "";
     ownerName.value = "";
+    contactPhone.value = "";
 }
 
 function init(){
-    console.log("Registering...");
+    console.log("Registering");
     displaypetSalon();
     let scooby = new Pet("Scooby", 60, "Male", "Great Dane", "Grooming","Shaggy","111-111-1111");
     let rocky = new Pet("Rocky", 7, "Male", "Chocolate Lab", "Grooming","Mike", "222-222-2222");
     let emma = new Pet("Emma", 2, "Female", "American Shorthaired Cat", "Grooming", "Mandee", "333-333-3333");
     petSalon.pet.push(scooby,rocky,emma);
+
+    displayPetCards();
 }
 
 window.onload=init;
