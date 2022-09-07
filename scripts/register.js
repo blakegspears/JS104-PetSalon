@@ -99,7 +99,7 @@ let contactPhone = document.getElementById("contactPhone");
 function isValid(aPet){
     let valid= true;
 
-    if(aPet.name == ""){
+    if(aPet.name == "" || aPet.service == "" || aPet.phone == ""){
         valid= false;
     }
     
@@ -112,7 +112,7 @@ function register(){
     if(isValid(thePet)){
         petSalon.pet.push(thePet);
         clearInputs();
-        displayPetCards();    
+        displayPetTable();    
     }else{
         alert("Please add the required information.");
     }
@@ -137,7 +137,7 @@ function init(){
     let emma = new Pet("Emma", 2, "Female", "American Shorthaired Cat", "Grooming", "Mandee", "333-333-3333");
     petSalon.pet.push(scooby,rocky,emma);
 
-    displayPetCards();
+    displayPetTable();
 }
 
 window.onload=init;
@@ -147,7 +147,8 @@ function displayPetsNames() {
         console.log(petSalon.pet.name[i]);
     }
 }
-alert(petSalon.pet.length);
+
+// alert(petSalon.pet.length);
 // use alert to display the amount of pets (alert(),length)
-//travel the pets array
-//displayInfo();
+// travel the pets array
+// displayInfo();

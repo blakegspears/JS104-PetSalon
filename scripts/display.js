@@ -1,3 +1,4 @@
+/*
 function displayPetCards() {
     const petsDiv = document.getElementById("pets");
 //travel the array
@@ -21,8 +22,27 @@ for(let i = 0; i < petSalon.pets.length; i++) {
     petsDiv.innerHTML+=tmp;
     }
 }
-
+*/
 
 function displayPetTable() {
-
+    const petsDiv = document.getElementById("petTable");
+    //travel the array
+    for(let i = 0; i < petSalon.pets.length; i++) {
+        //get the pet
+        let pet=petSalon.pets[i];
+        //create the tmp
+        let tmp = `
+        <table class="pet">
+            <tr> Name : ${pet.name}</tr>
+            <tr> Age : ${pet.age}</tr>
+            <tr> Gender : ${pet.gender}</tr>
+            <tr> Breed : ${pet.breed}</tr>
+            <tr> ownerName : ${pet.owner}</tr>
+            <tr> contactPhone : ${pet.phone}</tr>
+            <tr> serviceSelect : ${pet.service}</tr>
+        </table>
+        `;
+        //insert the tmp into html
+        petsDiv.innerHTML+=tmp;
+        }
 }
